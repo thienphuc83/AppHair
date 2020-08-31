@@ -3,6 +3,7 @@ package com.example.hair;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void Anhxa() {
         TextView tvhelo = findViewById(R.id.tvhelo);
-
+        Button button = findViewById(R.id.button);
     }
 }
