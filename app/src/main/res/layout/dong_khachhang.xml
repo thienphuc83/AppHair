@@ -1,87 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+    android:padding="10dp">
+
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <TextView
-            android:id="@+id/tvdongtenkhachhang"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:text="Tên khách hàng"
-            android:textColor="@color/colorAccent"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:background="@color/colorPrimaryDark"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/tvdonggioitinhkhachhang"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Nữ"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:background="@color/colorPrimary"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvdongtenkhachhang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Tên khách hàng"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvdonggioitinhkhachhang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Nữ"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_bg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="SĐT"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvdongsdtkhachhang"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/custom_bg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="098799387"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_bg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="Đã cắt"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tvdongsolancattoc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@drawable/custom_bg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:text="3 lần"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+        </LinearLayout>
     </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="SĐT"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:background="@drawable/custom_bg"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/tvdongsdtkhachhang"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:text="098799387"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:background="@drawable/custom_bg"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="40dp">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:text="Đã cắt"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:background="@drawable/custom_bg"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
-        <TextView
-            android:id="@+id/tvdongsolancattoc"
-            android:layout_width="0dp"
-            android:layout_weight="3"
-            android:text="3 lần"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:fontFamily="serif"
-            android:background="@drawable/custom_bg"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
-    </LinearLayout>
-</LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
