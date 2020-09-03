@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -32,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
     EditText edtTenKH, edt3SDT;
     RecyclerView rvDanhsachKH;
     AllKhachHangAdapter allKhachHangAdapter;
-    ArrayList<KhachHang> mangkhachhang;
+    public ArrayList<KhachHang> mangkhachhang;
+
+    //lọc
+    String nameKH = "";
+    String sdt = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,82 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Anhxa();
         GetData();
+        LocKhachHang();
+
+    }
+
+    // bộ lọc khách hàng
+    private void LocKhachHang() {
+        edtTenKH.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String tentimkiem = edtTenKH.getText().toString();
+                if (tentimkiem.length()>=2){
+                    tentimkiem = tentimkiem.toLowerCase();//cho viết hoa hết
+                    //tiến hành kiểm tra và update lại list
+                    nameKH = tentimkiem;
+                    KiemTra();
+                }else {
+                    // nếu không nhập thì get lại data
+                    GetData();
+                }
+            }
+        });
+//        edt3SDT.addTextChangedListener(new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence s, int start, int before, int count) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable s) {
+//                String sdttimkiem = edt3SDT.getText().toString();
+//                if (sdttimkiem.length()==3){
+//                    sdttimkiem = sdttimkiem;//cho viết hoa hết
+//                    //tiến hành kiểm tra và update lại list
+//                    sdt = sdttimkiem;
+//                    KiemTra();
+//                }else {
+//                    // nếu không nhập thì get lại data
+//                    GetData();
+//                }
+//            }
+//        });
+    }
+
+    private void KiemTra(){
+        ArrayList<KhachHang> listTen = null;
+        if (nameKH.length()>=2){
+            listTen =new ArrayList<>();
+            for (KhachHang khachHang : mangkhachhang){
+                String tenkhach= khachHang.getTenKH().toLowerCase();
+                if (tenkhach.indexOf(nameKH)>=0){
+                    listTen.add(khachHang);
+                }
+            }
+        }
+//        //kiểm tra số điện thpaij
+//        if (sdt.length()==3){
+//
+//        }
+
+
+        allKhachHangAdapter.updateKH(listTen);
 
     }
 
