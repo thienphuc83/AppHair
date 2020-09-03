@@ -34,88 +34,111 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:background="@color/colorGray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorWhite"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="5dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:gravity="center_vertical"
-            android:text="Bộ lọc"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp"
-            android:textStyle="bold" />
 
-        <LinearLayout
-            android:padding="5dp"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:orientation="vertical">
+            android:padding="10dp"
+            app:cardBackgroundColor="@color/colorGray"
+            app:cardCornerRadius="7dp">
 
-            <EditText
-                android:id="@+id/edtboloctenkhachhang"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/custom_bg"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:hint="Nhập tên khách hàng"
-                android:inputType="text"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
             <LinearLayout
-                android:layout_marginTop="5dp"
-                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
                 <TextView
-                    android:id="@+id/tvbolocnam"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="Nam"
-                    android:textColor="@color/colorAccent"
-                    android:textSize="15sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="serif"
-                    android:background="@color/colorPrimaryDark"
-                    android:layout_height="match_parent"
-                    android:gravity="center"/>
-                <TextView
-                    android:id="@+id/tvbolocnu"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="Nữ"
+                    android:gravity="center_vertical"
+                    android:text="Bộ lọc"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="15sp"
-                    android:fontFamily="serif"
-                    android:background="@color/colorWhite"
-                    android:layout_height="match_parent"
-                    android:gravity="center"/>
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:padding="5dp">
+
+                    <EditText
+                        android:id="@+id/edtboloctenkhachhang"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/custom_bg"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:hint="Nhập tên khách hàng"
+                        android:inputType="text"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvbolocnam"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorPrimaryDark"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:text="Nam"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvbolocnu"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@color/colorWhite"
+                            android:fontFamily="serif"
+                            android:gravity="center"
+                            android:text="Nữ"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edtboloc3socuoidienthoaikhachhang"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/custom_bg"
+                        android:fontFamily="serif"
+                        android:gravity="center"
+                        android:hint="Nhập 3 số điện thoại cuối"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </LinearLayout>
-            <EditText
-                android:id="@+id/edtboloc3socuoidienthoaikhachhang"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/custom_bg"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:hint="Nhập 3 số điện thoại cuối"
-                android:inputType="number"
-                android:maxLength="3"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
-        </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="10dp"
             android:id="@+id/rvdanhsachkhachhang"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 </LinearLayout>
