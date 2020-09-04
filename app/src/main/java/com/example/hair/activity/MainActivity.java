@@ -16,7 +16,9 @@ import android.widget.TextView;
 
 import com.example.hair.R;
 import com.example.hair.adapter.AllKhachHangAdapter;
+import com.example.hair.adapter.AllThoAdapter;
 import com.example.hair.model.KhachHang;
+import com.example.hair.model.Tho;
 import com.example.hair.server.APIService;
 import com.example.hair.server.DataService;
 
@@ -35,10 +37,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgThem;
     TextView tvAll, tvNam, tvNu;
     EditText edtTenKH, edt3SDT;
-    RecyclerView rvDanhsachKH;
+    RecyclerView rvDanhsachKH, rvDanhsachTho;
     AllKhachHangAdapter allKhachHangAdapter;
+    AllThoAdapter allThoAdapter;
     public ArrayList<KhachHang> mangkhachhang;
-
+    public ArrayList<Tho> mangthocattoc;
     //lọc
     String nameKH = "";
     String sdt = "";
@@ -50,9 +53,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Anhxa();
-        GetData();
+        GetDataKH();
+        GetDataThoCatToc();
         LocKhachHang();
 
+    }
+
+    private void GetDataThoCatToc() {
+        DataService dataService= APIService.getService();
+        Call<List<Tho>> callback = dataService.GetAllTho();
+        callback.enqueue(new Callback<List<Tho>>() {
+            @Override
+            public void onResponse(Call<List<Tho>> call, Response<List<Tho>> response) {
+                mangthocattoc= (ArrayList<Tho>) response.body();
+//                Log.d("THO", mangthocattoc.get(0).getTenTho());
+                allThoAdapter = new AllThoAdapter(MainActivity.this, mangthocattoc);
+                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
+                linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
+                rvDanhsachTho.setLayoutManager(linearLayoutManager);
+                rvDanhsachTho.setAdapter(allThoAdapter);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Tho>> call, Throwable t) {
+
+            }
+        });
     }
 
     public void setColorGioiTinh() {
@@ -87,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                     KiemTra();
                 } else {
                     // nếu không nhập thì get lại data
-                    GetData();
+                    GetDataKH();
                 }
             }
         });
@@ -112,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     KiemTra();
                 }
                 if (sdttimkiem.length() == 0 && tentim.length() == 0) {
-                    GetData(); // mày thông  minh vãi lòn
+                    GetDataKH(); // mày thông  minh vãi lòn
                     // nếu ko nhập 3 số thì ko tìm mà vẫn load dữ liệu u như kỷ và thằng ten cũng phải rỗng
                 } else {
                     sdt = "";
@@ -202,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void GetData() {
+    private void GetDataKH() {
         DataService dataService = APIService.getService();
         Call<List<KhachHang>> callback = dataService.GetAllKH();
         callback.enqueue(new Callback<List<KhachHang>>() {
@@ -230,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
         edtTenKH = findViewById(R.id.edtboloctenkhachhang);
         edt3SDT = findViewById(R.id.edtboloc3socuoidienthoaikhachhang);
         rvDanhsachKH = findViewById(R.id.rvdanhsachkhachhang);
+        rvDanhsachTho = findViewById(R.id.rvthocattoc);
         arrTvGioitinh = new TextView[]{tvAll, tvNam, tvNu};
     }
 }

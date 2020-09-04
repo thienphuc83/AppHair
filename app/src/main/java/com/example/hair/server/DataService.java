@@ -1,6 +1,7 @@
 package com.example.hair.server;
 
 import com.example.hair.model.KhachHang;
+import com.example.hair.model.Tho;
 
 import java.util.List;
 
@@ -14,6 +15,9 @@ public interface DataService {
 
     @GET("getallkhachhang.php")
     Call<List<KhachHang>> GetAllKH();
+
+    @GET("getalltho.php")
+    Call<List<Tho>> GetAllTho();
 //
 //    @GET("playlistforcurrentday.php")
 //    Call<List<PlayList>> GetPlaylistCurrentDay();

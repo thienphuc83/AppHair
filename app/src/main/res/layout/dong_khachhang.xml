@@ -14,7 +14,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -27,7 +27,7 @@
                 android:gravity="center"
                 android:text="Tên khách hàng"
                 android:textColor="@color/colorAccent"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvdonggioitinhkhachhang"
@@ -39,12 +39,12 @@
                 android:gravity="center"
                 android:text="Nữ"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -56,7 +56,7 @@
                 android:gravity="center"
                 android:text="SĐT"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvdongsdtkhachhang"
@@ -68,12 +68,12 @@
                 android:gravity="center"
                 android:text="098799387"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:orientation="horizontal">
 
             <TextView
@@ -85,7 +85,7 @@
                 android:gravity="center"
                 android:text="Đã cắt"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tvdongsolancattoc"
@@ -97,7 +97,7 @@
                 android:gravity="center"
                 android:text="3 lần"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 
