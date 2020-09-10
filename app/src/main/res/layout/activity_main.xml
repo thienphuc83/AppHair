@@ -56,14 +56,12 @@
                 android:textSize="17sp"
                 android:textStyle="bold" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvthocattoc"
+            <fragment
+                android:id="@+id/fragment"
+                android:name="com.example.hair.activity.FragmentTho"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp">
+                android:layout_height="wrap_content" />
 
-            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
 
         <LinearLayout

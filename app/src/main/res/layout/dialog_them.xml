@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Thêm"
+            android:fontFamily="serif"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:textSize="20sp"/>
+        <LinearLayout
+            android:background="@drawable/custom_click_them"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <ImageView
+                android:padding="7dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/beardiconbg"/>
+            <TextView
+                android:id="@+id/tvthemtho"
+                android:padding="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorWhite"
+                android:text="Thợ"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:background="@drawable/custom_click_them"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+            <ImageView
+                android:padding="7dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/cat"/>
+            <TextView
+                android:id="@+id/tvthemkhach"
+                android:padding="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/colorWhite"
+                android:text="Khách hàng"
+                android:fontFamily="serif"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="20sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

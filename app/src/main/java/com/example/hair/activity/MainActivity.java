@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -37,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgThem;
     TextView tvAll, tvNam, tvNu;
     EditText edtTenKH, edt3SDT;
-    RecyclerView rvDanhsachKH, rvDanhsachTho;
+    RecyclerView rvDanhsachKH;
     AllKhachHangAdapter allKhachHangAdapter;
-    AllThoAdapter allThoAdapter;
+
     public ArrayList<KhachHang> mangkhachhang;
-    public ArrayList<Tho> mangthocattoc;
+
     //lọc
     String nameKH = "";
     String sdt = "";
@@ -54,33 +56,31 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Anhxa();
         GetDataKH();
-        GetDataThoCatToc();
         LocKhachHang();
-
     }
 
-    private void GetDataThoCatToc() {
-        DataService dataService= APIService.getService();
-        Call<List<Tho>> callback = dataService.GetAllTho();
-        callback.enqueue(new Callback<List<Tho>>() {
+    private void DialogThem() {
+
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_them);
+        TextView tvthemtho= dialog.findViewById(R.id.tvthemtho);
+        TextView tvthemkhach= dialog.findViewById(R.id.tvthemkhach);
+        tvthemkhach.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<List<Tho>> call, Response<List<Tho>> response) {
-                mangthocattoc= (ArrayList<Tho>) response.body();
-//                Log.d("THO", mangthocattoc.get(0).getTenTho());
-                allThoAdapter = new AllThoAdapter(MainActivity.this, mangthocattoc);
-                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this);
-                linearLayoutManager.setOrientation(RecyclerView.HORIZONTAL);
-                rvDanhsachTho.setLayoutManager(linearLayoutManager);
-                rvDanhsachTho.setAdapter(allThoAdapter);
-
-            }
-
-            @Override
-            public void onFailure(Call<List<Tho>> call, Throwable t) {
-
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ThemKhachHangActivity.class));
             }
         });
+        tvthemtho.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ThemThoActivity.class));
+            }
+        });
+        dialog.show();
     }
+
+
 
     public void setColorGioiTinh() {
         for (TextView tv : arrTvGioitinh) {
@@ -236,7 +236,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<KhachHang>> call, Response<List<KhachHang>> response) {
                 mangkhachhang = (ArrayList<KhachHang>) response.body();
-//                Log.d("AAA", mangkhachhang.get(0).getTenKH());
+//                Log.d("KHACH", mangkhachhang.get(5).getTenKH());
                 allKhachHangAdapter = new AllKhachHangAdapter(MainActivity.this, mangkhachhang);
                 rvDanhsachKH.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                 rvDanhsachKH.setAdapter(allKhachHangAdapter);
@@ -257,7 +257,14 @@ public class MainActivity extends AppCompatActivity {
         edtTenKH = findViewById(R.id.edtboloctenkhachhang);
         edt3SDT = findViewById(R.id.edtboloc3socuoidienthoaikhachhang);
         rvDanhsachKH = findViewById(R.id.rvdanhsachkhachhang);
-        rvDanhsachTho = findViewById(R.id.rvthocattoc);
+
         arrTvGioitinh = new TextView[]{tvAll, tvNam, tvNu};
+
+        imgThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogThem();
+            }
+        });
     }
 }

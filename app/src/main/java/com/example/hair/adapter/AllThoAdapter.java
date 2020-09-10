@@ -40,7 +40,6 @@ public class AllThoAdapter extends RecyclerView.Adapter<AllThoAdapter.ViewHolder
         Tho tho = thoArrayList.get(position);
         holder.tvTenTho.setText(tho.getTenTho());
         Picasso.with(context).load(tho.getHinhAnhTho()).into(holder.imgTho);
-
     }
 
     @Override
