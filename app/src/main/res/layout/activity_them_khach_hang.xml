@@ -25,164 +25,177 @@
     </RelativeLayout>
 
     <LinearLayout
+        android:weightSum="10"
         android:background="@color/colorGray"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="10dp">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="Tên"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/edttenkhachhang"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_bg"
-            android:fontFamily="serif"
-            android:inputType="text"
-            android:gravity="center"
-            android:hint="Nguyễn Văn ..."
-            android:textSize="15sp" />
-
-        <TextView
-            android:textStyle="bold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="serif"
-            android:text="Số điện thoại"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp" />
-
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:padding="7dp"
-                android:src="@drawable/phone" />
+            android:layout_height="0dp"
+            android:layout_weight="9">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Tên"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
 
             <EditText
-                android:id="@+id/edtsdtkhachhang"
+                android:id="@+id/edttenkhachhang"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_bg"
+                android:fontFamily="serif"
+                android:inputType="text"
+                android:gravity="center"
+                android:hint="Nguyễn Văn ..."
+                android:textSize="15sp" />
+
+            <TextView
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="Số điện thoại"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="7dp"
+                    android:src="@drawable/phone" />
+
+                <EditText
+                    android:id="@+id/edtsdtkhachhang"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/custom_bg"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:hint="09xxxxxxxx"
+                    android:inputType="phone"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="Giới tính"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_bg"
+                android:orientation="horizontal"
+                android:padding="1dp">
+
+                <TextView
+                    android:id="@+id/tvnamkhachhang"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimaryDark"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Nam"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvnukhachhang"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/colorWhite"
+                    android:fontFamily="serif"
+                    android:gravity="center"
+                    android:text="Nữ"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="Địa chỉ"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edtdiachikhachhang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/custom_bg"
                 android:fontFamily="serif"
                 android:gravity="center"
-                android:hint="09xxxxxxxx"
-                android:inputType="phone"
+                android:inputType="text"
+                android:hint="Ngõ A, đường B,..."
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="Mô tả"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/edtmotakhachhang"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/custom_bg"
+                android:fontFamily="serif"
+                android:gravity="center"
+                android:hint="..."
+                android:inputType="text"
                 android:textSize="15sp" />
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="serif"
-            android:text="Giới tính"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_bg"
-            android:orientation="horizontal"
-            android:padding="1dp">
-
-            <TextView
-                android:id="@+id/tvnamkhachhang"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/colorPrimaryDark"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/btnthemkhachhang"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/custom_click_button_them"
                 android:fontFamily="serif"
-                android:gravity="center"
-                android:text="Nam"
+                android:text="Thêm"
+                android:textSize="15sp"
+                android:textAllCaps="false"
                 android:textColor="@color/colorPrimary"
-                android:textSize="15sp" />
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/tvnukhachhang"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/colorWhite"
-                android:fontFamily="serif"
-                android:gravity="center"
-                android:text="Nữ"
-                android:textColor="@color/colorPrimaryDark"
-                android:textSize="15sp" />
         </LinearLayout>
-        <TextView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="Địa chỉ"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/edtdiachikhachhang"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_bg"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:inputType="text"
-            android:hint="Ngõ A, đường B,..."
-            android:textSize="15sp" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="serif"
-            android:text="Mô tả"
-            android:textStyle="bold"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="15sp" />
-
-        <EditText
-            android:id="@+id/edtmotakhachhang"
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_bg"
-            android:fontFamily="serif"
-            android:gravity="center"
-            android:hint="..."
-            android:inputType="text"
-            android:textSize="15sp" />
-        <Button
-            android:id="@+id/btnthemkhachhang"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/custom_click_button_them"
-            android:fontFamily="serif"
-            android:text="Thêm"
-            android:textSize="15sp"
-            android:textAllCaps="false"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold" />
     </LinearLayout>
 
 
