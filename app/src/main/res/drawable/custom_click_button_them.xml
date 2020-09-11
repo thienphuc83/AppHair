@@ -3,10 +3,10 @@
 
     <item android:state_pressed="true">
         <shape android:shape="rectangle">
-            <gradient android:angle="45"
-                android:startColor="@color/colorPrimary"
-                android:endColor="@color/colorGray"/>
+            <gradient android:startColor="#CE6A6A6A"
+                android:endColor="#B4000000"
+                android:angle="45"/>
         </shape>
     </item>
-    <item android:drawable="@color/colorWhite"/>
+    <item android:drawable="@drawable/custom_button_them"/>
 </selector>

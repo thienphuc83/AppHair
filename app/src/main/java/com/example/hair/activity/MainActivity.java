@@ -11,24 +11,18 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hair.R;
 import com.example.hair.adapter.AllKhachHangAdapter;
-import com.example.hair.adapter.AllThoAdapter;
 import com.example.hair.model.KhachHang;
-import com.example.hair.model.Tho;
 import com.example.hair.server.APIService;
 import com.example.hair.server.DataService;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -42,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rvDanhsachKH;
     AllKhachHangAdapter allKhachHangAdapter;
 
-    public ArrayList<KhachHang> mangkhachhang;
+   public ArrayList<KhachHang> mangkhachhang;
 
     //lọc
     String nameKH = "";
@@ -231,15 +225,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void GetDataKH() {
         DataService dataService = APIService.getService();
-        Call<List<KhachHang>> callback = dataService.GetAllKH();
-        callback.enqueue(new Callback<List<KhachHang>>() {
+        Call<List<KhachHang>> call = dataService.GetAllKH();
+        call.enqueue(new Callback<List<KhachHang>>() {
             @Override
             public void onResponse(Call<List<KhachHang>> call, Response<List<KhachHang>> response) {
                 mangkhachhang = (ArrayList<KhachHang>) response.body();
 //                Log.d("KHACH", mangkhachhang.get(5).getTenKH());
                 allKhachHangAdapter = new AllKhachHangAdapter(MainActivity.this, mangkhachhang);
-                rvDanhsachKH.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                LinearLayoutManager layoutManager= new LinearLayoutManager(MainActivity.this);
+                layoutManager.setOrientation(RecyclerView.VERTICAL);
+                rvDanhsachKH.setLayoutManager(layoutManager);
                 rvDanhsachKH.setAdapter(allKhachHangAdapter);
+
             }
 
             @Override

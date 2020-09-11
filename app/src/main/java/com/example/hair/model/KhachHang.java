@@ -16,6 +16,9 @@ public class KhachHang implements Serializable {
     @SerializedName("SoDienThoaiKH")
     @Expose
     private String soDienThoaiKH;
+    @SerializedName("DiaChiKH")
+    @Expose
+    private String diaChiKH;
     @SerializedName("GioiTinhKH")
     @Expose
     private String gioiTinhKH;
@@ -45,6 +48,14 @@ public class KhachHang implements Serializable {
 
     public void setSoDienThoaiKH(String soDienThoaiKH) {
         this.soDienThoaiKH = soDienThoaiKH;
+    }
+
+    public String getDiaChiKH() {
+        return diaChiKH;
+    }
+
+    public void setDiaChiKH(String diaChiKH) {
+        this.diaChiKH = diaChiKH;
     }
 
     public String getGioiTinhKH() {
